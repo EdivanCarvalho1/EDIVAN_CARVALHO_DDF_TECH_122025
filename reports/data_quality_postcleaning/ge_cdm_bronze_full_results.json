@@ -1,0 +1,1430 @@
+{
+  "orders": {
+    "success": false,
+    "statistics": {
+      "evaluated_expectations": 5,
+      "successful_expectations": 4,
+      "unsuccessful_expectations": 1,
+      "success_percent": 80.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-orders_asset",
+            "column": "order_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_unique",
+          "kwargs": {
+            "batch_id": "pandas-orders_asset",
+            "column": "order_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-orders_asset",
+            "column": "customer_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-orders_asset",
+            "column": "created_at"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": false,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_in_set",
+          "kwargs": {
+            "batch_id": "pandas-orders_asset",
+            "column": "status",
+            "value_set": [
+              "delivered",
+              "shipped",
+              "canceled",
+              "invoiced",
+              "processing",
+              "unavailable",
+              "approved"
+            ]
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 5,
+          "unexpected_percent": 0.005028107118794059,
+          "partial_unexpected_list": [
+            "created",
+            "created",
+            "created",
+            "created",
+            "created"
+          ],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.005028107118794059,
+          "unexpected_percent_nonmissing": 0.005028107118794059,
+          "partial_unexpected_counts": [
+            {
+              "value": "created",
+              "count": 5
+            }
+          ],
+          "partial_unexpected_index_list": [
+            7434,
+            9238,
+            21441,
+            55086,
+            58958
+          ]
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  },
+  "order_items": {
+    "success": true,
+    "statistics": {
+      "evaluated_expectations": 7,
+      "successful_expectations": 7,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-order_items_asset",
+            "column": "order_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 112650,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-order_items_asset",
+            "column": "order_item_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 112650,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_compound_columns_to_be_unique",
+          "kwargs": {
+            "batch_id": "pandas-order_items_asset",
+            "column_list": [
+              "order_id",
+              "order_item_id"
+            ]
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 112650,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-order_items_asset",
+            "column": "product_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 112650,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-order_items_asset",
+            "column": "seller_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 112650,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-order_items_asset",
+            "column": "item_price",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 112650,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-order_items_asset",
+            "column": "freight_value",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 112650,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  },
+  "payments": {
+    "success": true,
+    "statistics": {
+      "evaluated_expectations": 6,
+      "successful_expectations": 6,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-payments_asset",
+            "column": "order_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 103886,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-payments_asset",
+            "column": "payment_seq"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 103886,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_compound_columns_to_be_unique",
+          "kwargs": {
+            "batch_id": "pandas-payments_asset",
+            "column_list": [
+              "order_id",
+              "payment_seq"
+            ]
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 103886,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-payments_asset",
+            "column": "payment_type",
+            "mostly": 0.98
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 103886,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-payments_asset",
+            "column": "installments",
+            "mostly": 0.98,
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 103886,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-payments_asset",
+            "column": "payment_value",
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 103886,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  },
+  "reviews": {
+    "success": true,
+    "statistics": {
+      "evaluated_expectations": 2,
+      "successful_expectations": 2,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-reviews_asset",
+            "column": "order_id",
+            "mostly": 0.98
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 98410,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-reviews_asset",
+            "column": "score",
+            "mostly": 0.95,
+            "min_value": 1.0,
+            "max_value": 5.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 98410,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  },
+  "customers": {
+    "success": true,
+    "statistics": {
+      "evaluated_expectations": 4,
+      "successful_expectations": 4,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-customers_asset",
+            "column": "customer_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_unique",
+          "kwargs": {
+            "batch_id": "pandas-customers_asset",
+            "column": "customer_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-customers_asset",
+            "column": "state",
+            "mostly": 0.98
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_value_lengths_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-customers_asset",
+            "column": "state",
+            "mostly": 0.98,
+            "min_value": 2,
+            "max_value": 2
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 99441,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  },
+  "sellers": {
+    "success": true,
+    "statistics": {
+      "evaluated_expectations": 4,
+      "successful_expectations": 4,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-sellers_asset",
+            "column": "seller_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 3095,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_unique",
+          "kwargs": {
+            "batch_id": "pandas-sellers_asset",
+            "column": "seller_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 3095,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-sellers_asset",
+            "column": "state",
+            "mostly": 0.98
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 3095,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_value_lengths_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-sellers_asset",
+            "column": "state",
+            "mostly": 0.98,
+            "min_value": 2,
+            "max_value": 2
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 3095,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  },
+  "products": {
+    "success": true,
+    "statistics": {
+      "evaluated_expectations": 7,
+      "successful_expectations": 7,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-products_asset",
+            "column": "product_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 32951,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_unique",
+          "kwargs": {
+            "batch_id": "pandas-products_asset",
+            "column": "product_id"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 32951,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-products_asset",
+            "column": "category_pt",
+            "mostly": 0.95
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 32951,
+          "unexpected_count": 610,
+          "unexpected_percent": 1.8512336499650999,
+          "partial_unexpected_list": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "partial_unexpected_counts": [
+            {
+              "value": null,
+              "count": 20
+            }
+          ],
+          "partial_unexpected_index_list": [
+            105,
+            128,
+            145,
+            154,
+            197,
+            244,
+            294,
+            299,
+            347,
+            428,
+            436,
+            459,
+            504,
+            514,
+            552,
+            616,
+            627,
+            628,
+            696,
+            700
+          ]
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-products_asset",
+            "column": "weight_g",
+            "mostly": 0.98,
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 32951,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 2,
+          "missing_percent": 0.006069618524475737,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-products_asset",
+            "column": "length_cm",
+            "mostly": 0.98,
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 32951,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 2,
+          "missing_percent": 0.006069618524475737,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-products_asset",
+            "column": "height_cm",
+            "mostly": 0.98,
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 32951,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 2,
+          "missing_percent": 0.006069618524475737,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-products_asset",
+            "column": "width_cm",
+            "mostly": 0.98,
+            "min_value": 0.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 32951,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 2,
+          "missing_percent": 0.006069618524475737,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  },
+  "geolocation": {
+    "success": true,
+    "statistics": {
+      "evaluated_expectations": 5,
+      "successful_expectations": 5,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "expectation_results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-geolocation_asset",
+            "column": "zip_prefix"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 19015,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-geolocation_asset",
+            "column": "lat_avg"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 19015,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "pandas-geolocation_asset",
+            "column": "lng_avg"
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 19015,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-geolocation_asset",
+            "column": "lat_avg",
+            "mostly": 0.98,
+            "min_value": -35.0,
+            "max_value": 6.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 19015,
+          "unexpected_count": 8,
+          "unexpected_percent": 0.04207204838285564,
+          "partial_unexpected_list": [
+            28.008978338034268,
+            13.001420173555276,
+            22.56795175383837,
+            9.049062717536652,
+            7.271649375032848,
+            38.81681628638297,
+            42.18400274298598,
+            14.585072541779615
+          ],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.04207204838285564,
+          "unexpected_percent_nonmissing": 0.04207204838285564,
+          "partial_unexpected_counts": [
+            {
+              "value": 7.271649375032848,
+              "count": 1
+            },
+            {
+              "value": 9.049062717536652,
+              "count": 1
+            },
+            {
+              "value": 13.001420173555276,
+              "count": 1
+            },
+            {
+              "value": 14.585072541779615,
+              "count": 1
+            },
+            {
+              "value": 22.56795175383837,
+              "count": 1
+            },
+            {
+              "value": 28.008978338034268,
+              "count": 1
+            },
+            {
+              "value": 38.81681628638297,
+              "count": 1
+            },
+            {
+              "value": 42.18400274298598,
+              "count": 1
+            }
+          ],
+          "partial_unexpected_index_list": [
+            6077,
+            10691,
+            13734,
+            13748,
+            13762,
+            15781,
+            16419,
+            18309
+          ]
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_between",
+          "kwargs": {
+            "batch_id": "pandas-geolocation_asset",
+            "column": "lng_avg",
+            "mostly": 0.98,
+            "min_value": -75.0,
+            "max_value": -30.0
+          },
+          "meta": {},
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 19015,
+          "unexpected_count": 9,
+          "unexpected_percent": 0.047331054430712595,
+          "partial_unexpected_list": [
+            -15.536867177679133,
+            -23.583939075194326,
+            -28.424444123004108,
+            -29.38484558716252,
+            -27.69808676596982,
+            -25.170903455030523,
+            -9.394624510957431,
+            -8.723762147513938,
+            121.10539381057764
+          ],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.047331054430712595,
+          "unexpected_percent_nonmissing": 0.047331054430712595,
+          "partial_unexpected_counts": [
+            {
+              "value": -29.38484558716252,
+              "count": 1
+            },
+            {
+              "value": -28.424444123004108,
+              "count": 1
+            },
+            {
+              "value": -27.69808676596982,
+              "count": 1
+            },
+            {
+              "value": -25.170903455030523,
+              "count": 1
+            },
+            {
+              "value": -23.583939075194326,
+              "count": 1
+            },
+            {
+              "value": -15.536867177679133,
+              "count": 1
+            },
+            {
+              "value": -9.394624510957431,
+              "count": 1
+            },
+            {
+              "value": -8.723762147513938,
+              "count": 1
+            },
+            {
+              "value": 121.10539381057764,
+              "count": 1
+            }
+          ],
+          "partial_unexpected_index_list": [
+            6077,
+            10691,
+            11738,
+            12017,
+            13734,
+            13748,
+            15781,
+            16419,
+            18309
+          ]
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ]
+  }
+}

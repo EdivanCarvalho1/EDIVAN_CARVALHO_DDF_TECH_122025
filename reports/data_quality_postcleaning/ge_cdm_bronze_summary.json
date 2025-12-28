@@ -1,0 +1,66 @@
+[
+  {
+    "dataset": "orders",
+    "success": false,
+    "success_percent": 80.0,
+    "evaluated_expectations": 5,
+    "successful_expectations": 4,
+    "unsuccessful_expectations": 1
+  },
+  {
+    "dataset": "order_items",
+    "success": true,
+    "success_percent": 100.0,
+    "evaluated_expectations": 7,
+    "successful_expectations": 7,
+    "unsuccessful_expectations": 0
+  },
+  {
+    "dataset": "payments",
+    "success": true,
+    "success_percent": 100.0,
+    "evaluated_expectations": 6,
+    "successful_expectations": 6,
+    "unsuccessful_expectations": 0
+  },
+  {
+    "dataset": "reviews",
+    "success": true,
+    "success_percent": 100.0,
+    "evaluated_expectations": 2,
+    "successful_expectations": 2,
+    "unsuccessful_expectations": 0
+  },
+  {
+    "dataset": "customers",
+    "success": true,
+    "success_percent": 100.0,
+    "evaluated_expectations": 4,
+    "successful_expectations": 4,
+    "unsuccessful_expectations": 0
+  },
+  {
+    "dataset": "sellers",
+    "success": true,
+    "success_percent": 100.0,
+    "evaluated_expectations": 4,
+    "successful_expectations": 4,
+    "unsuccessful_expectations": 0
+  },
+  {
+    "dataset": "products",
+    "success": true,
+    "success_percent": 100.0,
+    "evaluated_expectations": 7,
+    "successful_expectations": 7,
+    "unsuccessful_expectations": 0
+  },
+  {
+    "dataset": "geolocation",
+    "success": true,
+    "success_percent": 100.0,
+    "evaluated_expectations": 5,
+    "successful_expectations": 5,
+    "unsuccessful_expectations": 0
+  }
+]
