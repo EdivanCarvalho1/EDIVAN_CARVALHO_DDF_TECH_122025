@@ -1,6 +1,8 @@
-# Apresentação do Case de Análise de Dados – Dadosfera
+# Case Dadosfera - Pipeline de Dados com Arquitetura Medallion
 
 Este projeto tem como objetivo demonstrar a aplicação prática de um pipeline de dados utilizando a arquitetura Medallion, desde a ingestão bruta até a entrega de insights analíticos. Utilizando o dataset público Brazilian E-Commerce Public Dataset by Olist, o case explora todo o ciclo de vida dos dados, incluindo etapas de tratamento, validação de qualidade e visualização. A plataforma utilizada para análise e visualização dos dados é a Dadosfera, que oferece recursos robustos para exploração e criação de dashboards interativos.
+
+- [Link para apresentação em vídeo](https://youtu.be/YourVideoLinkHere)
 
 ## ITEM 1 - Escolha dos dados
 
@@ -26,7 +28,9 @@ A estrutura do dataset permite analisar o negócio sob múltiplas perspectivas, 
 
 Além disso, o conjunto de dados de geolocalização possibilita análises espaciais e regionais, ampliando o potencial analítico do projeto.
 
-# Ingestão no Google Colab para tratamento
+[Pasta com originais e transformações](/data)
+
+## ITEM 2 - Ingestão no Google Colab para tratamento
 
 Os dados foram ingeridos em forma raw no Google Colab, onde foram tratados e organizados conforme o modelo medallion proposto para posterior carga no ambiente de análise da Dadosfera. O ambiente do Colab possibilitou a utilização de bibliotecas como Pandas e Spark para manipulação dos dados e great_expectations para validação de qualidade, além de facilitar a visualização e validação dos resultados intermediários.
 
@@ -38,7 +42,11 @@ A seguinte estrutura de pastas foi utilizada no Colab/Drive para organizar os da
 
 O projeto adotou a arquitetura Medallion para organizar o fluxo de dados em três camadas distintas: Bronze, Silver e Gold. Cada camada possui um propósito específico na jornada dos dados, desde a ingestão bruta até a entrega de insights analíticos.
 
-### Figura da Arquitetura Medallion e Star Schema:
+## Arquitetura Anterior:
+
+![Arquitetura Anterior](prints/previous_architecture.png)
+
+### Item 6 - Figura da Arquitetura Medallion e Star Schema:
 
 ![Medallion Arquitetura](/images/medallion.drawio.png)
 ![Star Schema](/images/star_schema.png)
@@ -49,7 +57,7 @@ A camada Bronze recebeu os dados brutos diretamente do dataset público, sem tra
 
 ### Dados da Camada Bronze:
 
-![Bronze Layer](/prints/bronze_layer.png)
+![Camada Bronze](/prints/bronze_layer.png)
 
 ## Transformações para a camada Silver
 
@@ -78,7 +86,7 @@ As agregações foram realizadas utilizando funções nativas do Spark, garantin
 
 ![alt text](/prints/gold_kpis.png)
 
-## Ingestão na Dadosfera
+## ITEM 2.1 - Ingestão na Dadosfera
 
 A ingestão foi feita a partir do Google Sheets, conectando diretamente ao ambiente da Dadosfera para análise e visualização dos dados tratados na camada silver para posterior análise no Metabase. A plataforma da Dadosfera possibilitou a criação de dashboards interativos, facilitando a exploração dos insights gerados a partir do dataset.
 
@@ -88,14 +96,28 @@ A ingestão foi feita a partir do Google Sheets, conectando diretamente ao ambie
 
 ## Exemplo de Tabelas:
 
-![Tabelas](/prints/tables.png)
+![Tabelas](/prints/description_table.png)
 
 ## Dashboard Criado:
 
 ![Dashboard 1](/prints/dashboard_1.png)
 ![Dashboard 2](/prints/dashboard_2.png)
 
-## Validação de qualidade dos dados
+## EXEMPLO DE SQL UTILIZADO NO METABASE PARA CRIAÇÃO DE DASHBOARDS:
+```sql
+-- Exemplo: Faturamento Mensal
+
+```
+
+## Item 3 - Catalogo de Dados na Dadosfera
+
+As tabelas receberam descrição e nomes amigáveis para facilitar a compreensão dos dados pelos usuários da plataforma. Cada coluna foi documentada com informações sobre seu significado, tipo de dado e possíveis valores, promovendo transparência e facilitando a exploração dos dados.
+
+### Exemplo de Tabelas Documentadas:
+
+![alt text](/prints/description_table.png)
+
+## ITEM 4 - Validação de qualidade dos dados
 
 A validação de qualidade dos dados foi realizada utilizando a ferramenta Great Expectations, aplicada sobre os dados da camada CDM Silver, após o processo de limpeza e padronização. Para cada dataset (orders, order_items, payments, reviews, customers, sellers, products e geolocation), foram definidas expectativas específicas relacionadas a integridade, consistência e plausibilidade dos dados.
 
@@ -108,12 +130,34 @@ Os resultados foram consolidados em relatórios estruturados nos formatos JSON (
 ![alt text](/prints/validation.png)
 ![alt text](/prints/report.png)
 
-# Pipeline de Dados Silver -> Gold utilizando Spark
+## Item 5 - Uso de Gen AI e LLMs para enriquecimento dos dados
+
+Utilizando a biblioteca transformers no Google Colab, foram geradas features de análise de sentimento e tópicos a partir das reviews dos clientes. Essas features foram então carregadas em um aplicativo Streamlit para exploração interativa.
+
+### Trecho de Código Utilizado:
+
+![alt text](/prints/llm_features.png)
+
+## ITEM 8 - Pipeline de Dados Silver -> Gold utilizando Spark
 
 O pipeline de dados foi implementado utilizando Apache Spark para processar e transformar os dados da camada Silver em visões analíticas na camada Gold. O código exemplifica uma das transformações realizadas, especificamente a criação da tabela fato de vendas (fact_sales) a partir da junção das entidades relevantes.
 
 ![alt text](/prints/spark_collab.png)
 
-# Stream Lit App para Análise de Reviews com LLM (Foi utilizado uma amostra na LLM devido ao limite de tokens no caso do modelo gratuito)
+## ITEM 9 - Stream Lit App para Análise de Reviews com LLM (Foi utilizado uma amostra na LLM devido ao limite de tokens no caso do modelo gratuito)
+
+Link para aplicação no [Streamlit Cloud](https://edivancarvalhoddftech122025-y4tvzmsvbwkdcxefeby4xy.streamlit.app/)
+
+# O que o dashboard mostra
+- **KPIs globais**: total de pedidos, clientes, receita total e ticket médio (`kpi_global/`)
+- **Evolução mensal do faturamento** (`revenue_monthly/`)
+- **Top 10 categorias por faturamento** (`revenue_category/`)
+- **Avaliação x volume de pedidos por categoria** (`review_category/`)
+- **Top 10 estados por receita** (`revenue_state/`)
+
+## LLM Insights (amostra)
+
+- KPIs da amostra: quantidade de reviews, % mismatch, sentimento médio, atraso médio
+> Observação: foi usada **amostragem** para gerar features de LLM por limites de custo/tempo em ambiente gratuito.
 
 
