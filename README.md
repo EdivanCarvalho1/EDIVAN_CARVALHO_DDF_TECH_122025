@@ -8,7 +8,7 @@ Este projeto utiliza o Brazilian E-Commerce Public Dataset by Olist, um conjunto
 
 ### Diagrama do Dataset na Origem (Raw)
 
-![alt text](/images/dataset_schema_raw.png)
+![Schema Raw](/images/dataset_schema_raw.png)
 
 O dataset foi anonimizado e disponibilizado pela Olist, uma das maiores plataformas de integração entre pequenos e médios vendedores e grandes canais de e-commerce no país. Ele retrata todo o ciclo de vida de um pedido, desde a criação da ordem até a entrega e a avaliação final do cliente.
 
