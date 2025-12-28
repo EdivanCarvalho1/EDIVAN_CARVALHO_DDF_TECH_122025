@@ -1,3 +1,7 @@
+# Apresentação do Case de Análise de Dados – Dadosfera
+
+Este projeto tem como objetivo demonstrar a aplicação prática de um pipeline de dados utilizando a arquitetura Medallion, desde a ingestão bruta até a entrega de insights analíticos. Utilizando o dataset público Brazilian E-Commerce Public Dataset by Olist, o case explora todo o ciclo de vida dos dados, incluindo etapas de tratamento, validação de qualidade e visualização. A plataforma utilizada para análise e visualização dos dados é a Dadosfera, que oferece recursos robustos para exploração e criação de dashboards interativos.
+
 ## ITEM 1 - Escolha dos dados
 
 Este projeto utiliza o Brazilian E-Commerce Public Dataset by Olist, um conjunto de dados públicos que representa aproximadamente 100 mil pedidos reais realizados entre 2016 e 2018 em múltiplos marketplaces no Brasil.
@@ -29,7 +33,6 @@ Os dados foram ingeridos em forma raw no Google Colab, onde foram tratados e org
 ### Estrutura de pastas:
 
 A seguinte estrutura de pastas foi utilizada no Colab/Drive para organizar os dados:
-
 
 # Arquitetura Medallion
 
@@ -81,12 +84,16 @@ A ingestão foi feita a partir do Google Sheets, conectando diretamente ao ambie
 
 ## Conexão com Google Sheets e Pipelines:
 
-![alt text](/prints/dadosfera_connection.png)
+![Conexão da Dadosfera com Google Sheets](/prints/dadosfera_connection.png)
 
-## Dashboard Criado: 
+## Exemplo de Tabelas:
 
-![alt text](/prints/dashboard_1.png)
-![alt text](/prints/dashboard_2.png)
+![Tabelas](/prints/tables.png)
+
+## Dashboard Criado:
+
+![Dashboard 1](/prints/dashboard_1.png)
+![Dashboard 2](/prints/dashboard_2.png)
 
 ## Validação de qualidade dos dados
 
@@ -96,7 +103,13 @@ As validações incluíram verificações de valores nulos, unicidade de chaves 
 
 Os resultados foram consolidados em relatórios estruturados nos formatos JSON (detalhado e resumido) e Markdown, permitindo fácil auditoria, rastreabilidade e acompanhamento da qualidade dos dados ao longo do pipeline.
 
-
 ### Exemplo de validação e relatório gerado:
+
 ![alt text](/prints/validation.png)
 ![alt text](/prints/report.png)
+
+# Pipeline de Dados Silver -> Gold utilizando Spark
+
+O pipeline de dados foi implementado utilizando Apache Spark para processar e transformar os dados da camada Silver em visões analíticas na camada Gold. O código exemplifica uma das transformações realizadas, especificamente a criação da tabela fato de vendas (fact_sales) a partir da junção das entidades relevantes.
+
+![alt text](/prints/spark_collab.png)
