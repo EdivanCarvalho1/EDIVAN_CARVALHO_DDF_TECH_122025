@@ -164,6 +164,10 @@ A arquitetura anterior (AWS) é baseada em um fluxo de eventos em tempo real, on
 
 Neste case, a solução proposta utiliza a **Dadosfera** como base de plataforma de dados e organiza o pipeline com a arquitetura **Medallion (Bronze/Silver/Gold)**, com o objetivo de reduzir o caminho entre dados e valor. A plataforma centraliza as etapas de **Integrar, Processar, Explorar e Analisar**, com **governança (IAM)**, **catálogo** e **analytics (Metabase)** integrados, facilitando a criação de ativos reutilizáveis e escaláveis para o negócio.
 
+### Diagrama da Solução Proposta:
+
+![alt text](images/medallion.drawio.png)
+
 ### Principais melhorias observadas
 
 - **Menos complexidade operacional:** em vez de manter múltiplos serviços separados e integrações entre eles, a solução proposta concentra o fluxo em pipelines + camadas Medallion + catálogo + dashboards, reduzindo pontos de falha e retrabalho.
