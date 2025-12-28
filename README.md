@@ -26,7 +26,7 @@ A estrutura do dataset permite analisar o negócio sob múltiplas perspectivas, 
 
 Além disso, o conjunto de dados de geolocalização possibilita análises espaciais e regionais, ampliando o potencial analítico do projeto.
 
-[Pasta com originais e transformações](/data)
+[Pasta com dados originais e transformações](/data)
 
 ## ITEM 2 - Ingestão no Google Colab para tratamento
 
@@ -174,6 +174,8 @@ Os resultados foram consolidados em relatórios estruturados nos formatos JSON (
 ![alt text](/prints/validation.png)
 ![alt text](/prints/report.png)
 
+- Observação: O 80% em orders se deve a valores nulos na coluna de entrega devido ao cancelamento de pedidos, o que é esperado no contexto do negócio e necessário para análises futuras.
+
 ## Item 5 - Uso de Gen AI e LLMs para enriquecimento dos dados
 
 Utilizando a biblioteca transformers no Google Colab, foram geradas features de análise de sentimento e tópicos a partir das reviews dos clientes. Essas features foram então carregadas em um aplicativo Streamlit para exploração interativa.
@@ -185,6 +187,8 @@ Utilizando a biblioteca transformers no Google Colab, foram geradas features de 
 ## ITEM 8 - Pipeline de Dados Silver -> Gold utilizando Spark
 
 O pipeline de dados foi implementado utilizando Apache Spark para processar e transformar os dados da camada Silver em visões analíticas na camada Gold. O código exemplifica uma das transformações realizadas, especificamente a criação da tabela fato de vendas (fact_sales) a partir da junção das entidades relevantes.
+
+### Exemplo de Código Utilizado:
 
 ![alt text](/prints/spark_collab.png)
 
