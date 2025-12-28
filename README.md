@@ -113,3 +113,7 @@ Os resultados foram consolidados em relatórios estruturados nos formatos JSON (
 O pipeline de dados foi implementado utilizando Apache Spark para processar e transformar os dados da camada Silver em visões analíticas na camada Gold. O código exemplifica uma das transformações realizadas, especificamente a criação da tabela fato de vendas (fact_sales) a partir da junção das entidades relevantes.
 
 ![alt text](/prints/spark_collab.png)
+
+# Stream Lit App para Análise de Reviews com LLM (Foi utilizado uma amostra na LLM devido ao limite de tokens no caso do modelo gratuito)
+
+
