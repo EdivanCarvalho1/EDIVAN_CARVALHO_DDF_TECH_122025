@@ -102,8 +102,54 @@ A ingestão foi feita a partir do Google Sheets, conectando diretamente ao ambie
 ![Dashboard 2](/prints/dashboard_2.png)
 
 ## EXEMPLO DE SQL UTILIZADO NO METABASE PARA CRIAÇÃO DE DASHBOARDS:
+
 ```sql
--- Exemplo: Faturamento Mensal
+-- Exemplo: Faturamento entre 2017-2018 por Mês
+SELECT
+    DATE_TRUNC(
+        'month',
+        TO_TIMESTAMP(o.created_at)
+    ) AS month_year,
+    SUM(oi.total_item_value) AS revenue
+FROM "TB__IU3CND__ORDER" o
+JOIN TB__IU3CND__ORDER_ITEM oi
+    ON oi.order_id = o.order_id
+WHERE o.created_at BETWEEN '2017-01-01' AND '2018-12-31'
+GROUP BY
+    DATE_TRUNC(
+        'month',
+        TO_TIMESTAMP(o.created_at)
+    )
+ORDER BY month_year;
+
+-- Exemplo: Top 10 Categorias por Faturamento
+
+SELECT
+    p.category_en AS category,
+    SUM(oi.total_item_value) AS revenue
+FROM TB__IU3CND__ORDER_ITEM oi
+JOIN TB__NOE43O__PRODUCT p
+    ON p.product_id = oi.product_id
+GROUP BY p.category_en
+ORDER BY revenue DESC
+LIMIT 10;
+
+-- Exemplo: Categorias com melhor avaliação
+
+SELECT
+    p.category_en AS category,
+    ROUND(AVG(r.score), 2) AS avg_review_score
+FROM TB__IU3CND__REVIEW r
+JOIN "TB__IU3CND__ORDER" o
+    ON o.order_id = r.order_id
+JOIN TB__IU3CND__ORDER_ITEM oi
+    ON oi.order_id = o.order_id
+JOIN TB__NOE43O__PRODUCT p
+    ON p.product_id = oi.product_id
+GROUP BY p.category_en
+HAVING COUNT(*) >= 50
+ORDER BY avg_review_score DESC
+LIMIT 5;
 
 ```
 
@@ -147,6 +193,7 @@ O pipeline de dados foi implementado utilizando Apache Spark para processar e tr
 Link para aplicação no [Streamlit Cloud](https://edivancarvalhoddftech122025-y4tvzmsvbwkdcxefeby4xy.streamlit.app/)
 
 # O que o dashboard mostra
+
 - **KPIs globais**: total de pedidos, clientes, receita total e ticket médio (`kpi_global/`)
 - **Evolução mensal do faturamento** (`revenue_monthly/`)
 - **Top 10 categorias por faturamento** (`revenue_category/`)
@@ -156,7 +203,7 @@ Link para aplicação no [Streamlit Cloud](https://edivancarvalhoddftech122025-y
 ## LLM Insights (amostra)
 
 - KPIs da amostra: quantidade de reviews, % mismatch, sentimento médio, atraso médio
-> Observação: foi usada **amostragem** para gerar features de LLM por limites de custo/tempo em ambiente gratuito.
+  > Observação: foi usada **amostragem** para gerar features de LLM por limites de custo/tempo em ambiente gratuito.
 
 ## Item 10 - Comparação Arquitetura Anterior (AWS) x Solução Proposta (Dadosfera + Medallion)
 
