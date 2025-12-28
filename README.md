@@ -2,8 +2,6 @@
 
 Este projeto tem como objetivo demonstrar a aplicação prática de um pipeline de dados utilizando a arquitetura Medallion, desde a ingestão bruta até a entrega de insights analíticos. Utilizando o dataset público Brazilian E-Commerce Public Dataset by Olist, o case explora todo o ciclo de vida dos dados, incluindo etapas de tratamento, validação de qualidade e visualização. A plataforma utilizada para análise e visualização dos dados é a Dadosfera, que oferece recursos robustos para exploração e criação de dashboards interativos.
 
-- [Link para apresentação em vídeo](https://youtu.be/YourVideoLinkHere)
-
 ## ITEM 1 - Escolha dos dados
 
 Este projeto utiliza o Brazilian E-Commerce Public Dataset by Olist, um conjunto de dados públicos que representa aproximadamente 100 mil pedidos reais realizados entre 2016 e 2018 em múltiplos marketplaces no Brasil.
@@ -38,7 +36,7 @@ Os dados foram ingeridos em forma raw no Google Colab, onde foram tratados e org
 
 A seguinte estrutura de pastas foi utilizada no Colab/Drive para organizar os dados:
 
-# Arquitetura Medallion
+# Item 2/6 Arquitetura Medallion
 
 O projeto adotou a arquitetura Medallion para organizar o fluxo de dados em três camadas distintas: Bronze, Silver e Gold. Cada camada possui um propósito específico na jornada dos dados, desde a ingestão bruta até a entrega de insights analíticos.
 
@@ -46,7 +44,7 @@ O projeto adotou a arquitetura Medallion para organizar o fluxo de dados em trê
 
 ![Arquitetura Anterior](prints/previous_architecture.png)
 
-### Item 6 - Figura da Arquitetura Medallion e Star Schema:
+### - Figura da Arquitetura Medallion e Star Schema:
 
 ![Medallion Arquitetura](/images/medallion.drawio.png)
 ![Star Schema](/images/star_schema.png)
@@ -160,4 +158,16 @@ Link para aplicação no [Streamlit Cloud](https://edivancarvalhoddftech122025-y
 - KPIs da amostra: quantidade de reviews, % mismatch, sentimento médio, atraso médio
 > Observação: foi usada **amostragem** para gerar features de LLM por limites de custo/tempo em ambiente gratuito.
 
+## Item 10 - Comparação Arquitetura Anterior (AWS) x Solução Proposta (Dadosfera + Medallion)
 
+A arquitetura anterior (AWS) é baseada em um fluxo de eventos em tempo real, onde um **Generator** publica dados em **Kinesis Stream**, que são entregues via **Firehose** para armazenamento em **S3** e consumo rápido por **Redis**. Esse modelo é eficiente para cenários de streaming e baixa latência, porém envolve múltiplos componentes para operar e evoluir (ingestão, entrega, armazenamento, serving, permissões, catálogo, qualidade e camada de analytics), o que tende a aumentar o esforço de manutenção e o tempo de entrega de valor para o negócio.
+
+Neste case, a solução proposta utiliza a **Dadosfera** como base de plataforma de dados e organiza o pipeline com a arquitetura **Medallion (Bronze/Silver/Gold)**, com o objetivo de reduzir o caminho entre dados e valor. A plataforma centraliza as etapas de **Integrar, Processar, Explorar e Analisar**, com **governança (IAM)**, **catálogo** e **analytics (Metabase)** integrados, facilitando a criação de ativos reutilizáveis e escaláveis para o negócio.
+
+### Principais melhorias observadas
+
+- **Menos complexidade operacional:** em vez de manter múltiplos serviços separados e integrações entre eles, a solução proposta concentra o fluxo em pipelines + camadas Medallion + catálogo + dashboards, reduzindo pontos de falha e retrabalho.
+- **Rastreabilidade e qualidade por camada:** Bronze preserva o dado original; Silver aplica padronização, enriquecimento e validação de qualidade (Great Expectations); Gold consolida visões e KPIs prontos para consumo, evitando divergência de métricas.
+- **Governança e entendimento embutidos:** ativos catalogados, descrições e nomes amigáveis permitem que usuários encontrem e compreendam dados com menos dependência de um time altamente especializado.
+- **Time-to-market mais rápido:** com ingestão, organização, catálogo e visualização no mesmo ecossistema, o ciclo para disponibilizar insights se torna mais curto.
+- **Base pronta para IA aplicada ao negócio:** a camada Gold e os ativos catalogados facilitam evolução para modelos de IA/GenAI. No case, foi demonstrado enriquecimento de reviews com features (sentimento e tópicos) e disponibilização via Streamlit.
